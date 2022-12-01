@@ -1,0 +1,538 @@
+.alert.alert-success {
+  display: none;
+}
+
+.form-group.formio-component.formio-component-settingsContainer {
+  background: #ebf5ff;
+  padding: 7px;
+}
+
+.formio-component .table {
+  color: #ffffff;
+}
+
+/* component label styles */
+
+.formio-component label[ref="label"] {
+  font-size: 16px !important;
+  padding-top: 0 !important;
+}
+
+/* text-field styles */
+
+.formio-component-textfield {
+  input.form-control {
+    margin-top: 0.25rem;
+    background: rgb(80, 70, 230, 0.2) !important;
+    border-radius: 0.25rem !important;
+    padding: 0.5rem 0.75rem !important;
+    border: 2px solid #5046e644 !important;
+  }
+
+  input.form-control:focus,
+  input.form-control:active {
+    border: 2px solid #5046e6 !important;
+    background: rgb(80, 70, 230, 0.4) !important;
+    border-radius: 0.25rem !important;
+    box-shadow: none !important;
+  }
+}
+
+.formio-component-textarea {
+  .ck-editor {
+    color: #1a2332;
+  }
+}
+
+/* number field styles */
+
+.formio-component-number {
+  input.form-control {
+    margin-top: 0.25rem;
+    background: rgb(80, 70, 230, 0.2) !important;
+    border-radius: 0.25rem !important;
+    padding: 0.5rem 0.75rem !important;
+    border: 2px solid #5046e644 !important;
+  }
+
+  input.form-control:focus,
+  input.form-control:active {
+    border: 2px solid #5046e6 !important;
+    background: rgb(80, 70, 230, 0.4) !important;
+    border-radius: 0.25rem !important;
+    box-shadow: none !important;
+  }
+
+  input.form-control::placeholder {
+    opacity: 0.75;
+  }
+
+  .input-group {
+    display: flex;
+    background: rgb(80, 70, 230, 0.2) !important;
+    border-radius: 0.25rem !important;
+  }
+
+  .input-group .input-group-append .input-group-text{
+    border: none !important;
+    height: calc(100% - 3px) !important;
+    background: #5046e6 !important;
+    color: white !important;
+    margin: 3px 0;
+  }
+}
+
+/* datetime field styles */
+.formio-component-datetime {
+  .input.form-control {
+    background: rgb(80, 70, 230, 0.2) !important;
+    border-top-left-radius: 0.25rem !important;
+    border-bottom-left-radius: 0.25rem !important;
+    padding: 0.5rem 0.75rem !important;
+    border: 2px solid #5046e644 !important;
+  }
+  .input.form-control:focus,
+  .input.form-control:active {
+    border: 2px solid #5046e6 !important;
+    background: rgb(80, 70, 230, 0.4) !important;
+    border-top-left-radius: 0.25rem !important;
+    border-bottom-left-radius: 0.25rem !important;
+    box-shadow: none !important;
+  }
+
+  .input-group-append span {
+    height: 100%;
+    cursor: pointer;
+    background: rgb(80, 70, 230, 0.6);
+    color: white;
+    border: none;
+    padding: 0 1rem;
+    border-radius: 0 !important;
+    border-top-right-radius: 0.25rem;
+    border-bottom-right-radius: 0.25rem;
+  }
+}
+
+/* selection field styles */
+
+.formio-component-select {
+  .selection.dropdown {
+    margin-top: 0.25rem;
+    background: rgb(80, 70, 230, 0.2) !important;
+    border-radius: 0.25rem !important;
+    padding: 0.5rem 0.75rem !important;
+    border: 2px solid #5046e644 !important;
+  }
+
+  .selection.dropdown:focus,
+  .selection.dropdown:active {
+    border: 2px solid #5046e6 !important;
+    background: rgb(80, 70, 230, 0.4) !important;
+    border-radius: 0.25rem !important;
+    box-shadow: none !important;
+  }
+
+  .formio-choices {
+    padding: 0 !important;
+  }
+
+  .formio-choices ~ input.formio-select-autocomplete-input {
+    display: none !important;
+  }
+
+  .formio-choices.is-open ~ input.formio-select-autocomplete-input {
+    display: block !important;
+  }
+
+  .choices__list,
+  .choices__list input {
+    color: #333 !important;
+  }
+
+  .choices__list.choices__list--single .choices__item {
+    color: white !important;
+  }
+}
+
+/* radio field styles */
+
+.formio-component-radio {
+  .form-check-label {
+    padding: 0.125rem 0 !important;
+    display: flex;
+    align-items: center;
+    gap: 0.375rem;
+    cursor: pointer;
+  }
+  input {
+    background: none;
+    border: 2px solid #5046e6;
+    margin-right: 0.25rem;
+  }
+
+  span {
+    padding: 0.225rem 0 0;
+  }
+}
+
+/* checkbox field styles */
+
+.formio-component-checkbox {
+  .form-check-label {
+    padding: 0.125rem 0 !important;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.375rem;
+    cursor: pointer;
+  }
+  input {
+    background: none !important;
+    border: 2px solid #5046e6;
+    margin-right: 0.25rem;
+  }
+  span {
+    padding: 0.225rem 0 0;
+  }
+}
+
+/* checkboxes field styles */
+
+.formio-component-selectboxes {
+  .form-check-label {
+    padding: 0.125rem 0 !important;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.375rem;
+    cursor: pointer;
+  }
+  input {
+    background: none;
+    border: 2px solid #5046e6;
+    margin-right: 0.25rem;
+  }
+  span {
+    padding: 0.225rem 0 0;
+  }
+}
+
+/* edit grid styles */
+
+.formio-component-editgrid {
+  button {
+    margin-top: 0.75rem !important;
+    width: auto !important;
+    height: auto !important;
+    padding: 0.5rem 3rem;
+    font-size: 0.875rem !important;
+  }
+
+  .editgrid-listgroup {
+    border-radius: 0.75rem !important;
+    overflow: hidden;
+
+    .list-group-item {
+      background: #5046e633 !important;
+      color: white;
+    }
+
+    .list-group-header {
+      background: #28255c !important;
+      color: white;
+    }
+  }
+
+  .editgrid-actions {
+    display: flex;
+    gap: 0.5rem;
+    margin: 1.25rem 0.35rem 0.75rem;
+
+    .btn {
+      margin: 0 !important;
+      font-size: 0.875rem !important;
+      padding: 0.625rem 2rem !important;
+      width: auto !important;
+      border-radius: 20rem;
+    }
+
+    .btn-danger {
+      background: #f44336 !important;
+    }
+  }
+
+  .row .col-sm-2:last-child {
+    margin-left: auto !important;
+  }
+
+  .list-group-header .row .col-sm-2:last-child {
+    margin-left: 0 !important;
+  }
+
+  .btn-group.pull-right {
+    border-radius: 5rem;
+    overflow: hidden;
+  }
+
+  .btn-group.pull-right button{
+    margin-top: 0 !important;
+  }
+
+  .btn-group.pull-right button:hover {
+    background: #463dd4 !important;
+  }
+
+  .btn-group.pull-right > button:first-child {
+    padding: .5rem 0.5rem .5rem 1rem;
+    background: #5046e6;
+    border: none;
+    color: white;
+  }
+
+  .btn-group.pull-right > button:last-child {
+    padding: .5rem 1rem .5rem 0.5rem;
+    background: #5046e6;
+    border: none;
+  }
+}
+
+//  data grid style
+
+.formio-component-datagrid {
+  table {
+    background: #5046e633;
+    border-radius: 1.25rem;
+  }
+
+  table.datagrid-table,
+  th,
+  tr,
+  td {
+    border: none !important;
+  }
+
+  button.formio-drag-button {
+    min-width: 0 !important;
+    width: 44px;
+    height: 44px;
+    padding: 0 !important;
+    border-radius: 0.5rem !important;
+    margin: 0 0 !important;
+  }
+
+  button.btn-secondary.formio-button-remove-row {
+    height: 44px !important;
+    width: 44px !important;
+    border-radius: 0.5rem !important;
+    background-color: #f44336 !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 0.625rem !important;
+    margin: 0 0 !important;
+  }
+
+  button.btn-secondary.formio-button-remove-row i {
+    font-size: 1.375rem !important;
+  }
+
+  button.btn-primary.formio-button-add-row {
+    margin: 0.5rem;
+    min-width: 1rem;
+    padding: .5rem 1.5rem !important;
+    font-size: 0.9rem !important;
+    width: auto;
+  }
+
+  button.btn-primary.formio-button-add-row i {
+    margin-right: 0.25rem !important;
+  }
+}
+
+/* data map styles */
+
+.formio-component-datamap {
+
+  table {
+    background: #5046e633;
+    border-radius: 1.25rem;
+  }
+
+  table.datagrid-table,
+  th,
+  tr,
+  td {
+    border: none !important;
+  }
+}
+
+/* well styles */
+
+div[ref="component"] .card.card-body.bg-light {
+  border: none !important;
+  background: #5046e633 !important;
+  border-radius: 1.25rem;
+}
+
+/* panel styles */
+
+.formio.builder .formio-component-panel .card.border {
+  border: 0px solid #5046e633 !important;
+}
+
+.formio-component-panel { 
+  border-radius: 1.25rem;
+  overflow: hidden;
+  margin-bottom: 1rem;
+
+  .card.border {
+    border: none !important;
+    background: none;
+  }
+
+  .card-header.bg-default {
+    background: #28255c;
+  }
+
+  .card-body {
+    background: #5046e633;
+  }
+}
+
+/* tabs styles */
+
+.formio-component-tabs { 
+  border-radius: 1.25rem;
+  overflow: hidden;
+  margin-bottom: 1rem;
+
+  .card {
+    border: none !important;
+    background: none;
+  }
+
+  .card-header {
+    background: #28255c;
+  }
+
+  .card-body {
+    background: #5046e633;
+  }
+
+  .nav-link.active {
+    background: #5046e6;
+    color: white;
+    border: none;
+    border-top-left-radius: .625rem;
+    border-top-right-radius: .625rem;
+  }
+
+  .nav-link:not(.active):hover {
+    color: white !important;
+    border: none;
+    border-top-left-radius: .625rem;
+    border-top-right-radius: .625rem;
+    background: #5046e655;
+  }
+}
+
+/* submission styles */
+
+.formio-component.formio-component-submissionField {
+  margin-bottom: .625rem;
+}
+
+
+/* specific styles */
+
+// style wells border
+
+.form1-grids {
+  .formio-component-datagrid .card.card-body.bg-light {
+    padding: 0.5rem 0.5rem;
+  }
+
+  .card.card-body.bg-light {
+    border: none;
+  }
+
+  table.datagrid-table,
+  tr,
+  td {
+    border: none !important;
+  }
+
+  td,
+  td > .card {
+    padding: 0 !important;
+  }
+
+  & > table > tbody > tr > td > div {
+    background: none !important;
+  }
+
+  & > table > tbody > tr > td > div > .card.card-body.bg-light {
+    padding: 0 1rem !important;
+  }
+}
+
+.radio-stack,
+.formio-component-radio {
+  .form-check,
+  .form-check-inline {
+    display: block;
+    padding: 0 1rem;
+    border-radius: 0.5rem !important;
+    background: #23304694;
+    margin-bottom: 0.5rem;
+  }
+
+  .form-check:hover,
+  .form-check-inline:hover {
+    background: #233046;
+  }
+
+  .form-check-label {
+    display: flex !important;
+    align-items: center;
+    padding: 1.25rem 0 !important;
+    cursor: pointer;
+  }
+
+  .form-check input {
+    background: #1a2332;
+    border: 2px solid #5046e6;
+    margin: 0 .5rem 0 0;
+  }
+
+  .form-check-label span {
+    padding-top: 0 !important;
+  }
+}
+
+table.table.datagrid-table.table-bordered > tbody > tr > td > .builder-component > .bg-white {
+  background-color: rgba(0, 0, 0, 0) !important;
+}
+
+@media (max-width: 900px) {
+  .k-widget.k-drawer.k-drawer-start {
+    display: none;
+  }
+  .k-breadcrumb {
+    display: none !important;
+  }
+  .k-drawer-expanded {
+    .k-widget.k-drawer.k-drawer-start {
+      display: inline-block;
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      top: 51px;
+      z-index: 99999;
+
+      .k-drawer-wrapper {
+        width: 100% !important;
+      }
+    }
+  }
+}

@@ -1,0 +1,111 @@
+@import './formio.scss';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.border-1 {
+  border-width: 1px;
+}
+
+.formio-form {
+  .form-check-input {
+    @apply w-[1rem] h-[1rem] static rounded-xl;
+    background: red;
+  }
+
+  .btn-primary {
+    @apply bg-lightBlue py-2 px-6 rounded-full #{!important};
+  }
+
+  .formio-component input {
+    // @apply text-white;
+    color: white;
+  }
+}
+
+.formio-dialog {
+  .formio-component-tabs { 
+  border-radius: 1.25rem;
+  overflow: hidden;
+  margin-bottom: 1rem;
+
+  .card {
+    border: none !important;
+  }
+
+  .card-header {
+    background: #eee;
+  }
+
+  .card-body {
+    background: white;
+  }
+
+  .nav-link.active {
+    background: #5046e6;
+    color: white;
+    border: none;
+    border-top-left-radius: .625rem;
+    border-top-right-radius: .625rem;
+  }
+}
+}
+
+.formio-dialog .formio-component input[type="text"] {
+  @apply text-black #{!important};
+  color: black !important;
+}
+
+.formio.builder {
+  .builder-sidebar {
+    @apply bg-[#1a2332] #{!important};
+
+    .form-control.builder-sidebar_search {
+      @apply bg-[#282f5d] text-white placeholder:text-[#ddd] border-1 border-lightBlue rounded-md;
+    }
+
+    .form-builder-panel {
+      @apply border-[0px];
+      // border: none !important;
+    }
+
+    .card-header.form-builder-group-header {
+      @apply bg-[#292f5d] text-white border-[0px] #{!important};
+
+      h5 button {
+        color: white !important;
+      }
+    }
+
+    .card-body {
+      @apply bg-[#222D40] flex flex-col gap-[.25rem];
+    }
+
+    .btn-primary {
+      @apply bg-lightNavy border-[1.5px] border-lightBlue;
+    }
+  }
+
+
+  .formio-form {
+    @apply text-[#eee];
+
+    .builder-component .component-btn-group .btn.component-settings-button{
+      @apply bg-lightBlue text-white border-0 #{!important};
+    }
+
+    .builder-component input {
+      @apply text-white;
+    }
+
+    .builder-components[ref="well-container"],
+    .builder-components[ref="editGrid-container"],
+    .builder-components[ref="container-container"],
+    .builder-components[ref="panel-container"],
+    .builder-components[ref="columns-container"]
+     {
+      @apply border-0;
+    }
+  }
+}
