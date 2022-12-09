@@ -14,7 +14,7 @@ export default function FormViewer({ form, submission, onChange, view, submissio
 				onChange(defaultSubmission)
 			}
 			submissionPassedRef.current = true
-		}, 400)
+		}, 600)
 
 		return () => clearTimeout(timeout)
 	}, [])

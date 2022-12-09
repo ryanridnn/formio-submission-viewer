@@ -6,6 +6,33 @@ import SubmissionViewer from './SubmissionViewer'
 import _ from 'lodash'
 import defaultSubmission from './data/submission'
 
+import { faker } from '@faker-js/faker'
+
+const sub = defaultSubmission
+
+sub.data.dataGrid = Array.from({ length: 40 }).map(() => {
+	return {
+		subscriberName: faker.name.fullName(),
+		bio: faker.lorem.sentence(),
+		age: Number(faker.random.numeric()),
+		details: {
+			firstName: faker.name.firstName(),
+			lastName: faker.name.lastName(),
+			realName: faker.name.fullName(),
+		},
+	}
+})
+
+// let dataMap = {}
+
+// Array.from({ length: 100 }).forEach(() => {
+// 	dataMap[faker.name.firstName()] = faker.name.fullName()
+// })
+
+sub.data.dataMap = {}
+
+import schemaConverter from './pdf/schemaConverter'
+
 const rendererViews = {
 	Form: 'Form',
 	Submission: 'Submission'
@@ -14,9 +41,9 @@ const rendererViews = {
 const tabTitles = Object.values(rendererViews)
 
 export default function FormRenderer({ schema }) {
-	const [submission, setSubmission] =  useState({})
+	const [submission, setSubmission] =  useState(() => sub)
 	const [view, setView] = useState(rendererViews.Form)
-	const [convertedSchema, setConvertedSchema] = useState(defaultSubmission)
+	const [convertedSchema, setConvertedSchema] = useState()
 	const submissionPassedRef = useRef(false) 
 
 	useEffect(() => {
@@ -105,6 +132,14 @@ const fieldsTypes = [
 		dataType: null
 	},
 	{
+		type: 'email',
+		dataType: null
+	},
+	{
+		type: 'datetime',
+		dataType: null
+	},
+	{
 		type: 'datagrid',
 		dataType: null
 	},
@@ -119,6 +154,10 @@ const fieldsTypes = [
 	{
 		type: 'container',
 		dataType: null
+	},
+	{
+		type: 'file',
+		dataType: 'file'
 	}
 ]
 

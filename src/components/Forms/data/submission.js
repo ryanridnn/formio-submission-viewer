@@ -1,5 +1,32 @@
 export default {
     "data": {
+        "dataGrid": [
+            {
+                "subscriberName": "Alex",
+                "bio": "Very good day innit",
+                "age": 34
+            },
+            {
+                "subscriberName": "Pablo",
+                "bio": "I learn Turkish today in duolingo",
+                "age": 65
+            },
+            {
+                "subscriberName": "Mis Brown",
+                "bio": "I love teaching",
+                "age": 24
+            },
+            {
+                "subscriberName": "Maxwell Johns",
+                "bio": "Engineering is my ultimate passion",
+                "age": 38
+            },
+            {
+                "subscriberName": "Frances Braun",
+                "bio": "I'm in middle school",
+                "age": 14
+            }
+        ],
         "firstName": "Joe",
         "lastName": "Rogan",
         "fullName": "Joe Rogan",
@@ -33,5 +60,6 @@ export default {
         },
         "submit": false,
         "age": 48
-    }
+    },
+    "view": "Form"
 }
