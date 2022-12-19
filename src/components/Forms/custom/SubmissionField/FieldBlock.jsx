@@ -3,7 +3,7 @@ export default function FieldBlock({ label, value, isInsideOfLayout, type }) {
 	const labelBgColor = isInsideOfLayout ? '#5046E61A' : '#2B3851';
 
 	if(type === 'file') {
-		if(value.length > 0) {
+		if(value?.length > 0) {
 			const files = value.map(file => {
 				const fileType = file.type.split('/')[0]
 
@@ -45,6 +45,13 @@ export default function FieldBlock({ label, value, isInsideOfLayout, type }) {
 		} else {
 			return <></>
 		}
+	} else if(type === 'textarea') {
+		return (
+			<div className={`textarea-submission-block ${isInsideOfLayout ? 'inside-of-layout' : ''}`}>
+			  <div className="textarea-submission-block__label">{ label }</div>
+			  <div className="textarea-submission-block__value">{ value }</div>
+			</div>
+		)
 	} else {
 		return (
 			<div className={`submission-block ${isInsideOfLayout ? 'inside-of-layout' : ''}`}>

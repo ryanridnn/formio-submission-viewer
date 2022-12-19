@@ -513,6 +513,41 @@ div[ref="component"] .card.card-body.bg-light {
     }
   }
 
+  .textarea-submission-block {
+    display: flex;
+    flex-direction: column;
+    gap: .375rem;
+    font-size: 1rem;
+    border-radius: .375rem;
+    overflow: hidden;
+    background: #263145;
+
+    .textarea-submission-block__label {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      padding: .5rem 1rem;
+      background: #2B3851;
+      height: inherit !important;
+      align-self: normal;
+    }
+
+    .textarea-submission-block__value {
+      flex: 1;
+      padding: .75rem 1rem;
+      text-align: left;
+    }
+  }
+
+  .textarea-submission-block.inside-of-layout {
+    background: #5046E626;
+
+    .textarea-submission-block__label {
+      background: #5046E61A
+    }
+  }
+
+
   .file-submission-block {
     font-size: 1rem;
     border-radius: .375rem;
@@ -526,12 +561,15 @@ div[ref="component"] .card.card-body.bg-light {
 
     .file-submission-block__value {
       padding: 1.25rem 1rem;
-      display: flex;
-      gap: .75rem;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      column-gap: .75rem;
+      row-gap: .75rem;
     }
 
     .file-submission-block__image {
-      width: 160px;
+      width: 100%;
+      grid-span: 1;
       display: block;
       cursor: pointer;
       border-radius: .5rem;
@@ -562,6 +600,11 @@ div[ref="component"] .card.card-body.bg-light {
 .print-view {
   width: 1100px;
   margin: 0 auto;
+
+  *{
+    letter-spacing: .01px !important;
+  }
+
   /* Submission styles */
 
   .formio-component.formio-component-submissionField {
@@ -576,6 +619,25 @@ div[ref="component"] .card.card-body.bg-light {
       }
 
       .submission-block__value {
+      }
+    }
+
+    .textarea-submission-block {
+      background: #F3F3F3;
+
+      .textarea-submission-block__label {
+        background: #EEEEEE
+      }
+
+      .textarea-submission-block__value {
+      }
+    }
+
+    .textarea-submission-block.inside-of-layout {
+      background: #ececec;
+
+      .textarea-submission-block__label {
+        background: #e9e9e9;
       }
     }
 
@@ -659,10 +721,6 @@ div[ref="component"] .card.card-body.bg-light {
   padding: 1rem 0;
   background: #fff;
   word-spacing: 0px !important;
-}
-
-.pdf-header-footer-layout {
-  position: absolute;
 }
 
 

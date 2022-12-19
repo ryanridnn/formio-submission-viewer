@@ -55,6 +55,7 @@ export default function FormRenderer({ schema }) {
 				return true
 			}) }
 			const submissionSchema = convertSchema(schemaWithNoButton)
+			console.log(submissionSchema)
 			setConvertedSchema(submissionSchema)
 		}
 	}, [view])
@@ -97,7 +98,7 @@ const fieldsTypes = [
 	},
 	{
 		type: 'textarea',
-		dataType: null,
+		dataType: 'textarea',
 	},
 	{
 		type: 'number',
@@ -158,7 +159,11 @@ const fieldsTypes = [
 	{
 		type: 'file',
 		dataType: 'file'
-	}
+	},
+	{
+        type: 'slider',
+        dataType: 'slider'
+    }	
 ]
 
 const layouts = ['well', 'panel', 'tabs']
@@ -174,7 +179,25 @@ const convertSchema = (schema, hasParentLayout = false) => {
 	let newSchema = {} 
 
 	if(schema.components) {
-		newSchema = schema.components.map((component) => {
+		const convertedTabs = []
+		schema.components.forEach(component => {
+			if(component.type === 'tabs') {
+				component.components.forEach((tab) => {
+					convertedTabs.push({
+						title: tab.label,
+						label: tab.label,
+						collapsible: false,
+						key: component.tab + '-' + tab.key,
+						type: 'panel',
+						components: tab.components
+ 					})
+				})
+			} else {
+				convertedTabs.push(component)
+			}
+		})
+
+		newSchema = convertedTabs.map((component) => {
 			const match = fieldsTypes.find(field => 
 				(field.type === component.type)
 			)

@@ -142,17 +142,27 @@ export default function SubmissionViewer({ form, submission, view }) {
 					if(currentComponentsHeight % docHeight + componentHeight > docHeight - margin.y - footerHeight) {
 						const childrenComponents = getChildrenComponents(component)
 
+						const checkBelowElementFromBottom = docHeight - ((currentComponentsHeight) % docHeight) - margin.y < minElementFromBottom + margin.y + footerHeight 
+
 						if(
-							docHeight - ((currentComponentsHeight) % docHeight) - margin.y < minElementFromBottom + margin.y + footerHeight
+							checkBelowElementFromBottom && !childrenComponents.length
 							|| componentHeight <= minElementSize
 							|| (!childrenComponents.length && componentHeight < docHeight - margin.y * 2 - headerHeight - footerHeight)
 						) {
+							let childrenMargin = 0
+
+							// if(componentHeight >= docHeight - margin.y * 2 - headerHeight - footerHeight
+							// 	&& childrenComponents?.length > 0
+							// ) {
+							// 	childrenMargin = 
+							// }
+
 							const marginTop = (docHeight - ((currentComponentsHeight) % docHeight)) + headerHeight + margin.y 
 
 							component.style.marginTop = marginTop * elWidth / availableWidth + 'px'
 
-							currentComponentsHeight += marginTop
-							margins.push(marginTop)
+							currentComponentsHeight += marginTop + childrenMargin
+							margins.push(marginTop + childrenMargin)
 						} else if(childrenComponents.length > 0 && componentHeight > minElementSize) {
 							let startingPoint = 0
 
@@ -242,9 +252,9 @@ export default function SubmissionViewer({ form, submission, view }) {
 	   		footerPagingEl.innerText = getFooterPagingContent(pageIndex + 1)
 
 	   		setElementPosition(headerClone, pageIndex * docHeight - headerHeight - 6)
-	   		setElementPosition(footerClone, (pageIndex + 1) * docHeight - footerHeight - headerHeight - 16)
-	   		headerClone.style.paddingBottom = `calc(1.5rem + ${10 * elWidth / availableWidth}px)`
-	   		footerClone.style.paddingTop = `calc(1rem + ${10 * elWidth / availableWidth}px)`
+	   		setElementPosition(footerClone, (pageIndex + 1) * docHeight - footerHeight - headerHeight - 10)
+	   		headerClone.style.paddingBottom = `calc(1.5rem + ${4 * elWidth / availableWidth}px)`
+	   		footerClone.style.paddingTop = `calc(1rem + ${4 * elWidth / availableWidth}px)`
 	   		element.append(headerClone)
 	   		element.append(footerClone)
 	   	})
